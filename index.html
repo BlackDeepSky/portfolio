@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Александр — Дата-инженер</title>
+  <meta name="description" content="Портфолио дата-инженера Александра: пет-проекты, навыки и контакты." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#hero" class="nav__logo" data-i18n="nav.logo">Александр</a>
+
+      <ul class="nav__links">
+        <li><a href="#about" data-i18n="nav.about">О себе</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Проекты</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Контакты</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+          <span class="lang-toggle__ru" data-lang-option="ru">RU</span>
+          <span class="lang-toggle__en" data-lang-option="en">EN</span>
+        </button>
+        <button class="nav__burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Привет, я</p>
+        <h1 class="hero__title" data-i18n="hero.title">Александр</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">Дата-инженер, строю пайплайны, которые превращают сырые данные в решения</p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaPrimary">Смотреть проекты</a>
+          <a href="assets/resume-ru.pdf" class="btn btn--ghost" id="resume-btn" download>
+            <span data-i18n="hero.ctaResume">Скачать резюме</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="about.title">О себе</span></h2>
+        <div class="about__grid">
+          <div class="about__text">
+            <p data-i18n="about.p1">Я дата-инженер. Пишу на Python, строю ETL/ELT-пайплайны, работаю с SQL/базами данных и облачными хранилищами. Мои пет-проекты доведены до состояния, которым пользуются живые люди, — а не заброшены на пол пути.</p>
+            <p data-i18n="about.p2">Люблю превращать хаос в структуру: чистые схемы, идемпотентные пайплайны, аккуратный код.</p>
+          </div>
+          <div class="about__skills">
+            <h3 class="about__skills-title" data-i18n="about.skillsTitle">Навыки</h3>
+            <ul class="skills-list" id="skills-list">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>CickHouse</li>
+              <li>ETL / ELT</li>
+              <li>Airflow</li>
+              <li>Docker</li>
+              <li>PostgreSQL</li>
+              <li>Cloud</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="projects.title">Проекты</span></h2>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Проекты рендерятся из JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="contact.title">Контакты</span></h2>
+        <p class="contact__intro" data-i18n="contact.intro">Всегда открыт для интересных задач и знакомств. Пишите мне.</p>
+        <div class="contact__links">
+          <a href="https://github.com/" class="contact__link" target="_blank" rel="noopener noreferrer">
+            <span class="contact__link-label">GitHub</span>
+            <span class="contact__link-handle">github.com/yourname</span>
+          </a>
+          <a href="https://t.me/" class="contact__link" target="_blank" rel="noopener noreferrer">
+            <span class="contact__link-label">Telegram</span>
+            <span class="contact__link-handle">@yourname</span>
+          </a>
+          <a href="mailto:you@example.com" class="contact__link">
+            <span class="contact__link-label">Email</span>
+            <span class="contact__link-handle">you@example.com</span>
+          </a>
+        </div>
+        <a href="assets/resume-ru.pdf" class="btn btn--primary contact__resume" id="resume-btn-bottom" download>
+          <span data-i18n="contact.resume">Скачать резюме</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span data-i18n="footer.copyright">© 2026 Александр. Сделано с любовью к данным.</span>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
