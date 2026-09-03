@@ -52,4 +52,31 @@
   document.querySelectorAll('.section, .hero').forEach(function (el) {
     observer.observe(el);
   });
+
+  // --- Терминальная анимация hero (появление строк) ---
+  var prefersReducedMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateTerminal() {
+    var term = document.querySelector('.terminal');
+    if (!term || prefersReducedMotion) {
+      // При reduced-motion просто показываем всё сразу
+      term && Array.prototype.forEach.call(term.querySelectorAll('[hidden]'), function (el) {
+        el.hidden = false;
+      });
+      return;
+    }
+    document.querySelectorAll('.term-line[data-type]').forEach(function (el) {
+      if (el.hidden) el.hidden = false;
+    });
+    var outputs = Array.prototype.slice.call(document.querySelectorAll('.term-line[data-line]'));
+    var delay = 350;
+    outputs.forEach(function (el, i) {
+      setTimeout(function () {
+        el.hidden = false;
+      }, delay * (i + 1));
+    });
+  }
+
+  window.setTimeout(animateTerminal, 700);
 })();
