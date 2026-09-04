@@ -38,7 +38,8 @@
       title: { ru: 'Листай', en: 'Listay' },
       desc: { ru: 'Веб-сервис перевода электронных книг с любого языка на любой. Три клика: загрузить файл, выбрать язык, скачать перевод. Фоновый перевод в очереди Celery, PWA-подобный фронтенд.', en: 'Web service that translates e-books from any language into any other. Three clicks: upload a file, pick a language, download the translation. Background translation via a Celery queue.' },
       tags: ['FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'React'],
-      url: 'https://github.com/BlackDeepSky/listay-app'
+      url: 'https://t.me/listaybook_bot',
+      cta: 'Bot →'
     },
     {
       id: 3,
@@ -115,7 +116,7 @@
             '<p class="project__desc">' + p.desc[currentLang] + '</p>' +
             '<div class="project__tags">' + tags + '</div>' +
           '</div>' +
-          '<a class="project__link" href="' + p.url + '" target="_blank" rel="noopener noreferrer">GitHub →</a>' +
+          '<a class="project__link" href="' + p.url + '" target="_blank" rel="noopener noreferrer">' + (p.cta || 'GitHub →') + '</a>' +
         '</article>'
       );
     }).join('');
