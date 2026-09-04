@@ -5,6 +5,7 @@
     'nav.logo': { ru: 'Александр', en: 'Alexander' },
     'nav.about': { ru: 'О себе', en: 'About' },
     'nav.projects': { ru: 'Проекты', en: 'Projects' },
+    'nav.roadmap': { ru: 'Роадмап', en: 'Roadmap' },
     'nav.contact': { ru: 'Контакты', en: 'Contact' },
     'hero.term': { ru: 'alexander@data: ~', en: 'alexander@data: ~' },
     'hero.whoami': { ru: 'whoami', en: 'whoami' },
@@ -17,6 +18,7 @@
     'about.p1': { ru: 'Я дата-инженер. Пишу на Python, строю ETL/ELT-пайплайны, работаю с SQL и облачными хранилищами. Мои пет-проекты доведены до состояния, которым пользуются люди, — а не заброшены на пол пути.', en: 'I\'m a data engineer. I write in Python, build ETL/ELT pipelines, and work with SQL and cloud storage. My pet projects are shipped and used by real people — not abandoned halfway.' },
     'about.p2': { ru: 'Люблю превращать хаос в структуру: чистые схемы, идемпотентные пайплайны, аккуратный код.', en: 'I love turning chaos into structure: clean schemas, idempotent pipelines, tidy code.' },
     'about.skillsTitle': { ru: 'Навыки', en: 'Skills' },
+    'roadmap.title': { ru: '~/roadmap', en: '~/roadmap' },
     'projects.title': { ru: '~/projects', en: '~/projects' },
     'contact.title': { ru: '~/contacts', en: '~/contacts' },
     'contact.intro': { ru: 'Всегда открыт для интересных задач и знакомств. Пишите мне.', en: 'Always open to interesting challenges and connections. Reach out.' },
@@ -79,6 +81,7 @@
     applyResumeLink();
     renderProjects();
     updateToggleState();
+    if (window.ROADMAP) window.ROADMAP.render();
     try { localStorage.setItem(STORAGE_KEY, currentLang); } catch (e) { /* ignore */ }
   }
 
