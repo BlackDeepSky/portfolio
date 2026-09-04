@@ -18,7 +18,6 @@
     'about.p2': { ru: 'Люблю превращать хаос в структуру: чистые схемы, идемпотентные пайплайны, аккуратный код.', en: 'I love turning chaos into structure: clean schemas, idempotent pipelines, tidy code.' },
     'about.skillsTitle': { ru: 'Навыки', en: 'Skills' },
     'projects.title': { ru: '~/projects', en: '~/projects' },
-    'projects.comingSoon': { ru: 'Скоро', en: 'Soon' },
     'contact.title': { ru: '~/contacts', en: '~/contacts' },
     'contact.intro': { ru: 'Всегда открыт для интересных задач и знакомств. Пишите мне.', en: 'Always open to interesting challenges and connections. Reach out.' },
     'contact.resume': { ru: 'Скачать резюме', en: 'Download resume' },
@@ -29,24 +28,31 @@
   var PROJECTS = [
     {
       id: 1,
-      title: { ru: 'Проект 1', en: 'Project 1' },
-      desc: { ru: 'Короткое описание первого пет-проекта. Что делает, какие проблемы решает.', en: 'Short description of the first pet project. What it does and the problems it solves.' },
-      tags: ['Python', 'SQL'],
-      url: '#'
+      title: { ru: 'News Bot', en: 'News Bot' },
+      desc: { ru: 'Telegram-бот, который парсит RSS-ленты про ИИ, науку и ИТ, пересказывает статьи по-русски через бесплатную ИИ-модель и публикует в канал. Работает по расписанию через GitHub Actions, без постоянно запущенного сервера.', en: 'Telegram bot that parses RSS feeds about AI, science and IT, rewrites articles in Russian via a free AI model and posts them to a channel. Runs on a schedule via GitHub Actions — no permanently running server.' },
+      tags: ['Python', 'RSS', 'OpenRouter', 'GitHub Actions'],
+      url: 'https://github.com/BlackDeepSky/news_bot'
     },
     {
       id: 2,
-      title: { ru: 'Проект 2', en: 'Project 2' },
-      desc: { ru: 'Короткое описание второго пет-проекта. Пайплайн от источника до витрины.', en: 'Short description of the second pet project. A pipeline from source to data mart.' },
-      tags: ['Airflow', 'PostgreSQL'],
-      url: '#'
+      title: { ru: 'Листай', en: 'Listay' },
+      desc: { ru: 'Веб-сервис перевода электронных книг с любого языка на любой. Три клика: загрузить файл, выбрать язык, скачать перевод. Фоновый перевод в очереди Celery, PWA-подобный фронтенд.', en: 'Web service that translates e-books from any language into any other. Three clicks: upload a file, pick a language, download the translation. Background translation via a Celery queue.' },
+      tags: ['FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'React'],
+      url: 'https://github.com/BlackDeepSky/listay-app'
     },
     {
       id: 3,
-      title: { ru: 'Проект 3', en: 'Project 3' },
-      desc: { ru: 'Короткое описание третьего пет-проекта. Ещё один пример моей работы.', en: 'Short description of the third pet project. Another example of my work.' },
-      tags: ['Docker', 'Cloud'],
-      url: '#'
+      title: { ru: 'КабинетЗаочника', en: 'Student Cabinet' },
+      desc: { ru: 'SaaS для автоматизации сдачи учебных работ в колледжах: студент сдаёт работы электронно или почтой, преподаватель проверяет. Роли студент/преподаватель/админ, PWA, деплой на Render.', en: 'SaaS that automates submission of coursework in colleges: students submit work electronically or by mail, teachers review it. Student/teacher/admin roles, PWA, deployed on Render.' },
+      tags: ['FastAPI', 'PostgreSQL', 'Cloudflare R2', 'Bootstrap', 'PWA'],
+      url: 'https://github.com/BlackDeepSky/student-cabinet-mvp'
+    },
+    {
+      id: 4,
+      title: { ru: 'Analytics Projects', en: 'Analytics Projects' },
+      desc: { ru: 'ETL-аналитика на SQL: анализ прибыльности сервиса доставки, выручка от новых пользователей, динамика ARPU/ARPPU/AOV. Сложные CTE и оконные функции PostgreSQL с визуализацией в Redash.', en: 'SQL ETL analytics: delivery-service profitability, revenue from new users, and ARPU/ARPPU/AOV dynamics. Complex CTEs and window functions in PostgreSQL visualised in Redash.' },
+      tags: ['PostgreSQL', 'SQL', 'ETL', 'Redash'],
+      url: 'https://github.com/BlackDeepSky/analytics_projects'
     }
   ];
 
@@ -105,7 +111,6 @@
           '<div class="project__body">' +
             '<div class="project__header">' +
               '<h3 class="project__title">' + p.title[currentLang] + '</h3>' +
-              '<span class="project__badge">' + DICT['projects.comingSoon'][currentLang] + '</span>' +
             '</div>' +
             '<p class="project__desc">' + p.desc[currentLang] + '</p>' +
             '<div class="project__tags">' + tags + '</div>' +

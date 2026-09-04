@@ -376,17 +376,6 @@ a:hover { color: var(--accent); text-decoration: underline; text-underline-offse
   color: var(--text);
 }
 .project__title::before { content: "~/"; color: var(--accent); }
-.project__badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  padding: 3px 9px;
-  border-radius: 999px;
-}
 .project__desc { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 16px; }
 .project__tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .project__tag {
