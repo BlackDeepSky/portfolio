@@ -33,7 +33,11 @@
       title: { ru: 'News Bot', en: 'News Bot' },
       desc: { ru: 'Telegram-бот, который парсит RSS-ленты про ИИ, науку и ИТ, пересказывает статьи по-русски через бесплатную ИИ-модель и публикует в канал. Работает по расписанию через GitHub Actions, без постоянно запущенного сервера.', en: 'Telegram bot that parses RSS feeds about AI, science and IT, rewrites articles in Russian via a free AI model and posts them to a channel. Runs on a schedule via GitHub Actions — no permanently running server.' },
       tags: ['Python', 'RSS', 'OpenRouter', 'GitHub Actions'],
-      url: 'https://github.com/BlackDeepSky/news_bot'
+      url: 'https://github.com/BlackDeepSky/news_bot',
+      links: [
+        { href: 'https://github.com/BlackDeepSky/news_bot', label: 'GitHub →' },
+        { href: 'https://t.me/yourpocketnews', label: 'Bot →' }
+      ]
     },
     {
       id: 2,
@@ -110,6 +114,15 @@
         return '<span class="project__tag">' + t + '</span>';
       }).join('');
 
+      var linksHtml;
+      if (p.links && p.links.length) {
+        linksHtml = '<div class="project__links">' + p.links.map(function (l) {
+          return '<a class="project__link" href="' + l.href + '" target="_blank" rel="noopener noreferrer">' + l.label + '</a>';
+        }).join('') + '</div>';
+      } else {
+        linksHtml = '<a class="project__link" href="' + p.url + '" target="_blank" rel="noopener noreferrer">' + (p.cta || 'GitHub →') + '</a>';
+      }
+
       return (
         '<article class="project">' +
           '<div class="project__body">' +
@@ -119,7 +132,7 @@
             '<p class="project__desc">' + p.desc[currentLang] + '</p>' +
             '<div class="project__tags">' + tags + '</div>' +
           '</div>' +
-          '<a class="project__link" href="' + p.url + '" target="_blank" rel="noopener noreferrer">' + (p.cta || 'GitHub →') + '</a>' +
+          linksHtml +
         '</article>'
       );
     }).join('');
