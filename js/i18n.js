@@ -32,35 +32,42 @@
     {
       id: 1,
       title: { ru: 'News Bot', en: 'News Bot' },
-      desc: { ru: 'Telegram-бот, который парсит RSS-ленты про ИИ, науку и ИТ, пересказывает статьи по-русски через бесплатную ИИ-модель и публикует в канал. Работает по расписанию через GitHub Actions, без постоянно запущенного сервера.', en: 'Telegram bot that parses RSS feeds about AI, science and IT, rewrites articles in Russian via a free AI model and posts them to a channel. Runs on a schedule via GitHub Actions — no permanently running server.' },
-      tags: ['Python', 'RSS', 'OpenRouter', 'GitHub Actions'],
-      url: 'https://github.com/BlackDeepSky/news_bot',
+      desc: { ru: 'Telegram-бот, который парсит RSS-ленты про ИИ, науку и ИТ, пересказывает статьи по-русски через бесплатную ИИ-модель (OpenRouter), подбирает картинку и публикует в канал. Работает по расписанию через GitHub Actions — без постоянно запущенного сервера.', en: 'Telegram bot that parses RSS feeds about AI, science and IT, rewrites articles in Russian via a free AI model (OpenRouter), picks a cover image and posts them to a channel. Runs on a schedule via GitHub Actions — no permanently running server.' },
+      tags: ['Python', 'feedparser', 'OpenRouter', 'Telegram Bot API', 'GitHub Actions'],
       links: [
         { href: 'https://github.com/BlackDeepSky/news_bot', label: 'GitHub →' },
-        { href: 'https://t.me/yourpocketnews', label: 'Bot →' }
+        { href: 'https://t.me/yourpocketnews', label: 'Channel →' }
       ]
     },
     {
       id: 2,
       title: { ru: 'Листай', en: 'Listay' },
-      desc: { ru: 'Веб-сервис перевода электронных книг с любого языка на любой. Три клика: загрузить файл, выбрать язык, скачать перевод. Фоновый перевод в очереди Celery, PWA-подобный фронтенд.', en: 'Web service that translates e-books from any language into any other. Three clicks: upload a file, pick a language, download the translation. Background translation via a Celery queue.' },
-      tags: ['FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'React'],
-      url: 'https://t.me/listaybook_bot',
-      cta: 'Bot →'
+      desc: { ru: 'Веб-сервис и Telegram-бот для перевода электронных книг с любого языка на любой. Три клика: загрузить файл, выбрать язык, скачать перевод. Бэкенд на FastAPI, очередь задач Celery + Redis, PostgreSQL, JWT-авторизация, фронтенд React + Tailwind, ИИ-перевод через DeepSeek. Деплой: Docker + Hetzner + Cloudflare.', en: 'Web service and Telegram bot that translate e-books from any language to any other. Three clicks: upload a file, pick a language, download the translation. FastAPI backend, Celery + Redis job queue, PostgreSQL, JWT auth, React + Tailwind frontend, AI translation via DeepSeek. Deployed with Docker on Hetzner behind Cloudflare.' },
+      tags: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'DeepSeek', 'React', 'Docker'],
+      links: [
+        { href: 'https://github.com/BlackDeepSky/listay-app', label: 'GitHub →' },
+        { href: 'https://t.me/listaybook_bot', label: 'Bot →' }
+      ]
     },
     {
       id: 3,
       title: { ru: 'КабинетЗаочника', en: 'Student Cabinet' },
-      desc: { ru: 'SaaS для автоматизации сдачи учебных работ в колледжах: студент сдаёт работы электронно или почтой, преподаватель проверяет. Роли студент/преподаватель/админ, PWA, деплой на Render.', en: 'SaaS that automates submission of coursework in colleges: students submit work electronically or by mail, teachers review it. Student/teacher/admin roles, PWA, deployed on Render.' },
-      tags: ['FastAPI', 'PostgreSQL', 'Cloudflare R2', 'Bootstrap', 'PWA'],
-      url: 'https://github.com/BlackDeepSky/student-cabinet-mvp'
+      desc: { ru: 'SaaS для автоматизации сдачи учебных работ в колледжах: студент сдаёт работы электронно или почтой, преподаватель проверяет, админ ведёт журнал. Роли студент / преподаватель / админ, PWA, email-уведомления, деплой на Render.', en: 'SaaS that automates submission of coursework in colleges: students submit work electronically or by mail, teachers review, admins keep an audit log. Student / teacher / admin roles, PWA, email notifications, deployed on Render.' },
+      tags: ['Python', 'FastAPI', 'PostgreSQL', 'Cloudflare R2', 'Bootstrap', 'PWA'],
+      links: [
+        { href: 'https://github.com/BlackDeepSky/student-cabinet-mvp', label: 'GitHub →' },
+        { href: 'https://student-cabinet-mvp.onrender.com', label: 'Demo →' }
+      ]
     },
     {
       id: 4,
       title: { ru: 'Analytics Projects', en: 'Analytics Projects' },
-      desc: { ru: 'ETL-аналитика на SQL: анализ прибыльности сервиса доставки, выручка от новых пользователей, динамика ARPU/ARPPU/AOV. Сложные CTE и оконные функции PostgreSQL с визуализацией в Redash.', en: 'SQL ETL analytics: delivery-service profitability, revenue from new users, and ARPU/ARPPU/AOV dynamics. Complex CTEs and window functions in PostgreSQL visualised in Redash.' },
-      tags: ['PostgreSQL', 'SQL', 'ETL', 'Redash'],
-      url: 'https://github.com/BlackDeepSky/analytics_projects'
+      desc: { ru: 'Четыре SQL-проекта по продуктовой аналитике: прибыльность сервиса доставки (влияние оптимизации сборки), выручка от новых пользователей, динамика ARPU / ARPPU / AOV, дашборд ключевых метрик роста. Сложные CTE и оконные функции PostgreSQL, визуализация в Redash.', en: 'Four SQL projects in product analytics: delivery-service profitability (impact of packing-cost optimisation), revenue from new users, ARPU / ARPPU / AOV dynamics, and a dashboard of key growth metrics. Complex CTEs and window functions in PostgreSQL, visualised in Redash.' },
+      tags: ['PostgreSQL', 'SQL', 'CTE', 'Window Functions', 'Redash', 'ETL'],
+      links: [
+        { href: 'https://github.com/BlackDeepSky/analytics_projects', label: 'GitHub →' },
+        { href: 'https://redash.public.karpov.courses/dashboards/9038-gross-profit', label: 'Dashboard →' }
+      ]
     }
   ];
 
@@ -115,14 +122,9 @@
         return '<span class="project__tag">' + t + '</span>';
       }).join('');
 
-      var linksHtml;
-      if (p.links && p.links.length) {
-        linksHtml = '<div class="project__links">' + p.links.map(function (l) {
-          return '<a class="project__link" href="' + l.href + '" target="_blank" rel="noopener noreferrer">' + l.label + '</a>';
-        }).join('') + '</div>';
-      } else {
-        linksHtml = '<a class="project__link" href="' + p.url + '" target="_blank" rel="noopener noreferrer">' + (p.cta || 'GitHub →') + '</a>';
-      }
+      var linksHtml = '<div class="project__links">' + p.links.map(function (l) {
+        return '<a class="project__link" href="' + l.href + '" target="_blank" rel="noopener noreferrer">' + l.label + '</a>';
+      }).join('') + '</div>';
 
       return (
         '<article class="project">' +
