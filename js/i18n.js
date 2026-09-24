@@ -56,7 +56,7 @@
       tags: ['Python', 'FastAPI', 'PostgreSQL', 'Cloudflare R2', 'Bootstrap', 'PWA'],
       links: [
         { href: 'https://github.com/BlackDeepSky/student-cabinet-mvp', label: 'GitHub →' },
-        { href: 'https://student-cabinet-mvp.onrender.com', label: 'Demo →' }
+        { href: 'https://cabinet.blackdeepsky.by', label: 'Demo →' }
       ]
     },
     {
@@ -67,6 +67,16 @@
       links: [
         { href: 'https://github.com/BlackDeepSky/analytics_projects', label: 'GitHub →' },
         { href: 'https://redash.public.karpov.courses/dashboards/9038-gross-profit', label: 'Dashboard →' }
+      ]
+    },
+    {
+      id: 5,
+      title: { ru: 'Logist Helper', en: 'Logist Helper' },
+      desc: { ru: 'Учёт рейсов и взаиморасчётов для небольших логистических компаний: дашборд с KPI, реестр рейсов, задолженности (дебиторка/кредиторка), отчёты по прибыли с пересчётом валют по курсу НБРБ, генерация счетов-фактур и актов (xlsx), импорт/экспорт Excel, резервные копии и PWA. Публичный демо-стенд с синтетикой, вход без пароля.', en: 'Trip and settlement accounting for small logistics companies: KPI dashboard, trip register, receivables/payables, profit reports with NBRB currency conversion, invoice and act generation (xlsx), Excel import/export, backups and a PWA. Public demo stand with synthetic data, no-password login.' },
+      tags: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'openpyxl', 'PWA'],
+      links: [
+        { href: 'https://github.com/BlackDeepSky/logist_helper', label: 'GitHub →' },
+        { href: 'https://logist-demo.blackdeepsky.by', label: 'Demo →' }
       ]
     }
   ];
