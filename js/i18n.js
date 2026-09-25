@@ -41,16 +41,6 @@
     },
     {
       id: 2,
-      title: { ru: 'Листай', en: 'Listay' },
-      desc: { ru: 'Веб-сервис и Telegram-бот для перевода электронных книг с любого языка на любой. Три клика: загрузить файл, выбрать язык, скачать перевод. Бэкенд на FastAPI, очередь задач Celery + Redis, PostgreSQL, JWT-авторизация, фронтенд React + Tailwind, ИИ-перевод через DeepSeek. Деплой: Docker + Hetzner + Cloudflare.', en: 'Web service and Telegram bot that translate e-books from any language to any other. Three clicks: upload a file, pick a language, download the translation. FastAPI backend, Celery + Redis job queue, PostgreSQL, JWT auth, React + Tailwind frontend, AI translation via DeepSeek. Deployed with Docker on Hetzner behind Cloudflare.' },
-      tags: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'DeepSeek', 'React', 'Docker'],
-      links: [
-        { href: 'https://github.com/BlackDeepSky/listay-app', label: 'GitHub →' },
-        { href: 'https://t.me/listaybook_bot', label: 'Bot →' }
-      ]
-    },
-    {
-      id: 3,
       title: { ru: 'КабинетЗаочника', en: 'Student Cabinet' },
       desc: { ru: 'SaaS для автоматизации сдачи учебных работ в колледжах: студент сдаёт работы электронно или почтой, преподаватель проверяет, админ ведёт журнал. Роли студент / преподаватель / админ, PWA, email-уведомления, деплой на Render.', en: 'SaaS that automates submission of coursework in colleges: students submit work electronically or by mail, teachers review, admins keep an audit log. Student / teacher / admin roles, PWA, email notifications, deployed on Render.' },
       tags: ['Python', 'FastAPI', 'PostgreSQL', 'Cloudflare R2', 'Bootstrap', 'PWA'],
@@ -60,23 +50,13 @@
       ]
     },
     {
-      id: 4,
+      id: 3,
       title: { ru: 'Analytics Projects', en: 'Analytics Projects' },
       desc: { ru: 'Четыре SQL-проекта по продуктовой аналитике: прибыльность сервиса доставки (влияние оптимизации сборки), выручка от новых пользователей, динамика ARPU / ARPPU / AOV, дашборд ключевых метрик роста. Сложные CTE и оконные функции PostgreSQL, визуализация в Redash.', en: 'Four SQL projects in product analytics: delivery-service profitability (impact of packing-cost optimisation), revenue from new users, ARPU / ARPPU / AOV dynamics, and a dashboard of key growth metrics. Complex CTEs and window functions in PostgreSQL, visualised in Redash.' },
       tags: ['PostgreSQL', 'SQL', 'CTE', 'Window Functions', 'Redash', 'ETL'],
       links: [
         { href: 'https://github.com/BlackDeepSky/analytics_projects', label: 'GitHub →' },
         { href: 'https://redash.public.karpov.courses/dashboards/9038-gross-profit', label: 'Dashboard →' }
-      ]
-    },
-    {
-      id: 5,
-      title: { ru: 'Logist Helper', en: 'Logist Helper' },
-      desc: { ru: 'Учёт рейсов и взаиморасчётов для небольших логистических компаний: дашборд с KPI, реестр рейсов, задолженности (дебиторка/кредиторка), отчёты по прибыли с пересчётом валют по курсу НБРБ, генерация счетов-фактур и актов (xlsx), импорт/экспорт Excel, резервные копии и PWA. Публичный демо-стенд с синтетикой, вход без пароля.', en: 'Trip and settlement accounting for small logistics companies: KPI dashboard, trip register, receivables/payables, profit reports with NBRB currency conversion, invoice and act generation (xlsx), Excel import/export, backups and a PWA. Public demo stand with synthetic data, no-password login.' },
-      tags: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'openpyxl', 'PWA'],
-      links: [
-        { href: 'https://github.com/BlackDeepSky/logist_helper', label: 'GitHub →' },
-        { href: 'https://logist-demo.blackdeepsky.by', label: 'Demo →' }
       ]
     }
   ];
