@@ -41,16 +41,6 @@
     },
     {
       id: 2,
-      title: { ru: 'КабинетЗаочника', en: 'Student Cabinet' },
-      desc: { ru: 'SaaS для автоматизации сдачи учебных работ в колледжах: студент сдаёт работы электронно или почтой, преподаватель проверяет, админ ведёт журнал. Роли студент / преподаватель / админ, PWA, email-уведомления, деплой на Render.', en: 'SaaS that automates submission of coursework in colleges: students submit work electronically or by mail, teachers review, admins keep an audit log. Student / teacher / admin roles, PWA, email notifications, deployed on Render.' },
-      tags: ['Python', 'FastAPI', 'PostgreSQL', 'Cloudflare R2', 'Bootstrap', 'PWA'],
-      links: [
-        { href: 'https://github.com/BlackDeepSky/student-cabinet-mvp', label: 'GitHub →' },
-        { href: 'https://cabinet.blackdeepsky.by', label: 'Demo →' }
-      ]
-    },
-    {
-      id: 3,
       title: { ru: 'Analytics Projects', en: 'Analytics Projects' },
       desc: { ru: 'Четыре SQL-проекта по продуктовой аналитике: прибыльность сервиса доставки (влияние оптимизации сборки), выручка от новых пользователей, динамика ARPU / ARPPU / AOV, дашборд ключевых метрик роста. Сложные CTE и оконные функции PostgreSQL, визуализация в Redash.', en: 'Four SQL projects in product analytics: delivery-service profitability (impact of packing-cost optimisation), revenue from new users, ARPU / ARPPU / AOV dynamics, and a dashboard of key growth metrics. Complex CTEs and window functions in PostgreSQL, visualised in Redash.' },
       tags: ['PostgreSQL', 'SQL', 'CTE', 'Window Functions', 'Redash', 'ETL'],
