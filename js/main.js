@@ -53,30 +53,105 @@
     observer.observe(el);
   });
 
-  // --- Терминальная анимация hero (появление строк) ---
+  // --- Терминальная анимация hero: печать команд по буквам ---
   var prefersReducedMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function animateTerminal() {
-    var term = document.querySelector('.terminal');
-    if (!term || prefersReducedMotion) {
-      // При reduced-motion просто показываем всё сразу
-      term && Array.prototype.forEach.call(term.querySelectorAll('[hidden]'), function (el) {
-        el.hidden = false;
-      });
-      return;
-    }
-    document.querySelectorAll('.term-line[data-type]').forEach(function (el) {
-      if (el.hidden) el.hidden = false;
-    });
-    var outputs = Array.prototype.slice.call(document.querySelectorAll('.term-line[data-line]'));
-    var delay = 350;
-    outputs.forEach(function (el, i) {
-      setTimeout(function () {
-        el.hidden = false;
-      }, delay * (i + 1));
+  var termRoot = document.querySelector('.terminal');
+  var termRunId = 0;
+
+  // Запоминаем полный текст команды (из i18n), чтобы печатать его по буквам.
+  function rememberTermText() {
+    if (!termRoot) return;
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-type'), function (el) {
+      if (el.textContent) el.setAttribute('data-text', el.textContent);
     });
   }
 
-  window.setTimeout(animateTerminal, 700);
+  function resetTerminal() {
+    if (!termRoot) return;
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-line'), function (el) {
+      el.hidden = true;
+    });
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-type'), function (el) {
+      el.textContent = '';
+    });
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-line[data-cmd] .term-cursor'), function (el) {
+      el.style.display = '';
+    });
+  }
+
+  function revealAllTerminal() {
+    if (!termRoot) return;
+    rememberTermText();
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-line'), function (el) {
+      el.hidden = false;
+    });
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-type'), function (el) {
+      el.textContent = el.getAttribute('data-text') || '';
+    });
+    // Оставляем курсор только на финальном промпте
+    Array.prototype.forEach.call(termRoot.querySelectorAll('.term-line[data-cmd] .term-cursor'), function (el) {
+      el.style.display = 'none';
+    });
+  }
+
+  function after(runId, ms, fn) {
+    window.setTimeout(function () { if (runId === termRunId) fn(); }, ms);
+  }
+
+  function typeText(el, runId, done) {
+    var full = el.getAttribute('data-text') || '';
+    el.textContent = '';
+    var i = 0;
+    function step() {
+      if (runId !== termRunId) return;
+      if (i >= full.length) { done(); return; }
+      var ch = full.charAt(i++);
+      el.textContent += ch;
+      var ms = 55 + Math.random() * 50;   // «живой» ритм печати
+      if (ch === ' ') ms += 45;           // лёгкая пауза на пробеле
+      after(runId, ms, step);
+    }
+    step();
+  }
+
+  function startTerminal() {
+    if (!termRoot) return;
+    termRunId += 1;
+    var runId = termRunId;
+    rememberTermText();
+
+    if (prefersReducedMotion) { revealAllTerminal(); return; }
+
+    resetTerminal();
+    var cmds = Array.prototype.slice.call(termRoot.querySelectorAll('.term-line[data-cmd]'));
+    var index = 0;
+
+    function next() {
+      if (runId !== termRunId) return;
+      if (index >= cmds.length) {
+        var fin = termRoot.querySelector('.term-line--final');
+        if (fin) fin.hidden = false;
+        return;
+      }
+      var line = cmds[index];
+      var typeEl = line.querySelector('.term-type');
+      var cursor = line.querySelector('.term-cursor');
+      line.hidden = false;
+      if (cursor) cursor.style.display = '';
+      typeText(typeEl, runId, function () {
+        if (runId !== termRunId) return;
+        if (cursor) cursor.style.display = 'none';
+        var out = line.nextElementSibling;
+        if (out && out.classList.contains('term-line--out')) out.hidden = false;
+        index += 1;
+        after(runId, 420, next);
+      });
+    }
+    next();
+  }
+
+  window.TERMINAL = { retype: startTerminal };
+  window.setTimeout(startTerminal, 650);
 })();

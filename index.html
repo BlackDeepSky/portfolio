@@ -43,13 +43,11 @@
             <span class="terminal__title" data-i18n="hero.term">alexander@data: ~</span>
           </div>
           <div class="terminal__body">
-            <div class="term-line" data-type>alexander@data:~$ <span data-i18n="hero.whoami">whoami</span><span class="term-cursor" aria-hidden="true"></span></div>
-            <div class="term-line term-line--out" data-line="1" hidden data-i18n="hero.whoamiOut">alexander · data engineer</div>
-            <div class="term-line" data-type>
-              alexander@data:~$ <span data-i18n="hero.cat">cat about.txt</span>
-            </div>
-            <div class="term-line term-line--out" data-line="3" hidden data-i18n="hero.catOut">Строю ETL/ELT-пайплайны, которые превращают сырые данные в решения.</div>
-            <div class="term-line" data-line="4" hidden>alexander@data:~$<span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line" data-cmd hidden><span class="term-prompt">alexander@data:~$ </span><span class="term-type" data-i18n="hero.whoami">whoami</span><span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line term-line--out" data-out hidden data-i18n="hero.whoamiOut">alexander · data engineer</div>
+            <div class="term-line" data-cmd hidden><span class="term-prompt">alexander@data:~$ </span><span class="term-type" data-i18n="hero.cat">cat about.txt</span><span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line term-line--out" data-out hidden data-i18n="hero.catOut">Строю ETL/ELT-пайплайны, которые превращают сырые данные в решения.</div>
+            <div class="term-line term-line--final" hidden><span class="term-prompt">alexander@data:~$</span> <span class="term-cursor" aria-hidden="true"></span></div>
           </div>
         </div>
         <div class="hero__actions">

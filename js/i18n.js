@@ -74,6 +74,7 @@
     renderProjects();
     updateToggleState();
     if (window.ROADMAP) window.ROADMAP.render();
+    if (window.TERMINAL) window.TERMINAL.retype();
     try { localStorage.setItem(STORAGE_KEY, currentLang); } catch (e) { /* ignore */ }
   }
 

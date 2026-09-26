@@ -171,6 +171,7 @@ a:hover { color: var(--accent); text-decoration: underline; text-underline-offse
 .terminal__body {
   padding: 20px 22px 26px;
   overflow-x: auto;
+  min-height: 200px;
 }
 
 .term-line {
