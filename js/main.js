@@ -71,7 +71,7 @@
   function resetTerminal() {
     if (!termRoot) return;
     Array.prototype.forEach.call(termRoot.querySelectorAll('.term-line'), function (el) {
-      el.hidden = true;
+      el.classList.add('is-pending');
     });
     Array.prototype.forEach.call(termRoot.querySelectorAll('.term-type'), function (el) {
       el.textContent = '';
@@ -85,7 +85,7 @@
     if (!termRoot) return;
     rememberTermText();
     Array.prototype.forEach.call(termRoot.querySelectorAll('.term-line'), function (el) {
-      el.hidden = false;
+      el.classList.remove('is-pending');
     });
     Array.prototype.forEach.call(termRoot.querySelectorAll('.term-type'), function (el) {
       el.textContent = el.getAttribute('data-text') || '';
@@ -132,19 +132,19 @@
       if (runId !== termRunId) return;
       if (index >= cmds.length) {
         var fin = termRoot.querySelector('.term-line--final');
-        if (fin) fin.hidden = false;
+        if (fin) fin.classList.remove('is-pending');
         return;
       }
       var line = cmds[index];
       var typeEl = line.querySelector('.term-type');
       var cursor = line.querySelector('.term-cursor');
-      line.hidden = false;
+      line.classList.remove('is-pending');
       if (cursor) cursor.style.display = '';
       typeText(typeEl, runId, function () {
         if (runId !== termRunId) return;
         if (cursor) cursor.style.display = 'none';
         var out = line.nextElementSibling;
-        if (out && out.classList.contains('term-line--out')) out.hidden = false;
+        if (out && out.classList.contains('term-line--out')) out.classList.remove('is-pending');
         index += 1;
         after(runId, 420, next);
       });

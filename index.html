@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <noscript><style>.term-line.is-pending { visibility: visible; }</style></noscript>
 </head>
 <body>
   <header class="header">
@@ -43,11 +44,11 @@
             <span class="terminal__title" data-i18n="hero.term">alexander@data: ~</span>
           </div>
           <div class="terminal__body">
-            <div class="term-line" data-cmd hidden><span class="term-prompt">alexander@data:~$ </span><span class="term-type" data-i18n="hero.whoami">whoami</span><span class="term-cursor" aria-hidden="true"></span></div>
-            <div class="term-line term-line--out" data-out hidden data-i18n="hero.whoamiOut">alexander · data engineer</div>
-            <div class="term-line" data-cmd hidden><span class="term-prompt">alexander@data:~$ </span><span class="term-type" data-i18n="hero.cat">cat about.txt</span><span class="term-cursor" aria-hidden="true"></span></div>
-            <div class="term-line term-line--out" data-out hidden data-i18n="hero.catOut">Строю ETL/ELT-пайплайны, которые превращают сырые данные в решения.</div>
-            <div class="term-line term-line--final" hidden><span class="term-prompt">alexander@data:~$</span> <span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line is-pending" data-cmd><span class="term-prompt">alexander@data:~$ </span><span class="term-type" data-i18n="hero.whoami">whoami</span><span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line term-line--out is-pending" data-out data-i18n="hero.whoamiOut">alexander · data engineer</div>
+            <div class="term-line is-pending" data-cmd><span class="term-prompt">alexander@data:~$ </span><span class="term-type" data-i18n="hero.cat">cat about.txt</span><span class="term-cursor" aria-hidden="true"></span></div>
+            <div class="term-line term-line--out is-pending" data-out data-i18n="hero.catOut">Строю ETL/ELT-пайплайны, которые превращают сырые данные в решения.</div>
+            <div class="term-line term-line--final is-pending"><span class="term-prompt">alexander@data:~$</span> <span class="term-cursor" aria-hidden="true"></span></div>
           </div>
         </div>
         <div class="hero__actions">
